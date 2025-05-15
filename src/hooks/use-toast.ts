@@ -1,5 +1,5 @@
 
-import { toast as toastPrimitive } from "@/components/ui/toast";
+import { toast as internalToast } from "@/components/ui/toast";
 
 export interface ToastProps {
   title?: string;
@@ -9,7 +9,7 @@ export interface ToastProps {
 
 export const useToast = () => {
   const toast = ({ title, description, variant = 'default' }: ToastProps) => {
-    toastPrimitive({
+    internalToast({
       title,
       description,
       variant,
@@ -19,5 +19,5 @@ export const useToast = () => {
   return { toast };
 };
 
-export { toastPrimitive as toast } from "@/components/ui/toast";
+export { internalToast as toast } from "@/components/ui/toast";
 export type { ToastActionElement } from "@/components/ui/toast";
